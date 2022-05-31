@@ -41,7 +41,7 @@ const FormComponent = () => {
 	const sortedPositions = [...positions].sort()
 
 	// Context
-	const { setPlayer } = usePlayer()
+	const { setPlayer, myPlayers, setMyPlayers } = usePlayer()
 
 	useEffect(() => {
 		if (formAge && formPosition !== '' && formCountry !== '') {
@@ -65,13 +65,15 @@ const FormComponent = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault()
-		setPlayer({
+		const newPlayer = {
 			id: idPlayer,
 			position: formPosition,
 			age: formAge,
 			country: formCountry,
 			price: formPrice,
-		})
+		}
+		setPlayer(newPlayer)
+		setMyPlayers([...myPlayers, newPlayer])
 		navigate('results')
 	}
 
