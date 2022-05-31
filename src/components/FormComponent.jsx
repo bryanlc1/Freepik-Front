@@ -17,10 +17,11 @@ const FormComponent = () => {
 			<Form.Group className="mb-3" controlId="formPosition">
 				<Form.Label>Position</Form.Label>
 				<Form.Select>
-					<option>Country select</option>
+					<option>Position select</option>
 				</Form.Select>
 			</Form.Group>
 			<Form.Group className="mb-3" controlId="formCountry">
+				<Form.Label>Country</Form.Label>
 				<Form.Select>
 					<option>Country select</option>
 				</Form.Select>

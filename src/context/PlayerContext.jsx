@@ -5,7 +5,15 @@ import { useState} from 'react'
 const playerContext = createContext();
 
 export const PlayerProvider = ({children}) => {
-    const [player,setPlayer] = useState({});
+    const [player,setPlayer] = useState({
+        id:334,
+        age:23,
+        country:'Ecuador',
+        position:{
+            name:'Fordward',
+            abbr:'Frw'
+            }
+    });
 
     return (
         <playerContext.Provider value={{player,setPlayer}}>
