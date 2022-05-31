@@ -1,9 +1,14 @@
 import { Card } from "react-bootstrap"
-export default () =>{
+
+const CardPlayer = () => {
     return(
         <>
         <h1>Card component</h1>
-        <Card></Card>
+        <Card>
+        <Card.Body>This is some text within a card body</Card.Body>
+        </Card>
         </>
     )
 }
+
+export default CardPlayer;

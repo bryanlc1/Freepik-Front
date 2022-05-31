@@ -1,7 +1,12 @@
 import Results from "./ResultsPage";
-
+import CardPlayer from '../components/CardPlayer';
 const ResultsPage = () => {
-  return <Results />;
+  return (
+    <>
+    <CardPlayer/>
+    <Results />
+    </>
+  );
 };
 
 export default ResultsPage;
