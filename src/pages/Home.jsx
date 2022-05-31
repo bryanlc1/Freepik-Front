@@ -13,7 +13,7 @@ const Home = () => {
             href="https://www.flaticon.es/stickers-gratis/futbol-americano"
             title="fútbol americano stickers"
           >
-            Fútbol americano stickers creadas por Stickers - Flaticon
+            Fútbol stickers creadas por Stickers - Flaticon
           </a>
         </div>
       </div>
