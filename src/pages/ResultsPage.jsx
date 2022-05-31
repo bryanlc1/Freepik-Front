@@ -4,7 +4,6 @@ const ResultsPage = () => {
   return (
     <>
     <CardPlayer/>
-    <Results />
     </>
   );
 };

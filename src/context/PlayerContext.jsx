@@ -9,10 +9,7 @@ export const PlayerProvider = ({children}) => {
         id:334,
         age:23,
         country:'Ecuador',
-        position:{
-            name:'Fordward',
-            abbr:'Frw'
-            }
+        position:'Fordward',
     });
 
     return (
