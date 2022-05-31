@@ -2,9 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { PlayerProvider } from "./context/PlayerContext";
 import Home from "./pages/Home";
 import ResultsPage from "./pages/ResultsPage";
-import NavComponent from './components/NavComponent'
-import './App.css'
+import NavComponent from "./components/NavComponent";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css"
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/results" element={<ResultsPage />} />
+          <Route path="results" element={<ResultsPage />} />
         </Routes>
       </Router>
     </PlayerProvider>
