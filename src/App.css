@@ -1,11 +1,10 @@
 .freepik {
-  color: rgb(138, 153, 252);
+  color: rgb(159, 171, 247);
 }
 
-.nav {
-  margin-bottom: 140px;
+.nav{
+  margin: 110px;
 }
-
 .players-layout {
     margin: 3rem;
     display: grid;
