@@ -19,12 +19,13 @@ const data = require("./data/train.json");
 const sortedData = data.sort((a, b) => a.age - b.age);
 
 // dummy props
+const props = {
+  country: "France",
+  position: "Forward∫",
+};
 
 const Results = (props) => {
   const { country, position } = props;
-
-  // const [country, setCountry] = useState();
-  // const [position, setPosition] = useState();
 
   const [filteredData, setFilteredData] = useState([]);
 
@@ -36,15 +37,9 @@ const Results = (props) => {
     );
   }, [country, position]);
 
-  const countries = new Set();
-  const positions = new Set();
-
   data.map((item) => {
     positions.add(item.position);
   });
-
-  const sortedCountries = [...countries].sort();
-  const sortedPositions = [...positions].sort();
 
   return (
     <AreaChart
