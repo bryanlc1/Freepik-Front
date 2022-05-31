@@ -1,4 +1,4 @@
-import Results from "./ResultsPage";
+import Results from "../components/Results";
 
 const ResultsPage = () => {
   return <Results />;
