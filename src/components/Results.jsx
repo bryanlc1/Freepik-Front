@@ -20,12 +20,12 @@ const data = require("../data/train.json");
 const sortedData = data.sort((a, b) => a.age - b.age);
 
 // dummy props
-const dummyProps = {
-  country: "France",
-  position: "Forward",
-};
+// const dummyProps = {
+//   country: "France",
+//   position: "Forward",
+// };
 
-const Results = ({ dummyProps }) => {
+const Results = () => {
   const [country, setCountry] = useState();
   const [position, setPosition] = useState();
   const [filteredByCountry, setFilteredByCountry] = useState([]);
