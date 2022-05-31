@@ -1,17 +1,24 @@
-import { createContext } from 'react'
-import { useState } from 'react'
+import { createContext } from "react";
+import { useState } from "react";
 
-const playerContext = createContext()
+const playerContext = createContext();
 
 export const PlayerProvider = ({ children }) => {
-	const [player, setPlayer] = useState({})
-	const [myPlayers, setMyPlayers] = useState([])
+  const [player, setPlayer] = useState({
+    id: 334,
+    age: 23,
+    country: "Argentina",
+    position: "Goalkeeper",
+    price: 4000000,
+  });
 
-	return (
-		<playerContext.Provider value={{ player, setPlayer, myPlayers, setMyPlayers }}>
-			{children}
-		</playerContext.Provider>
-	)
-}
+  return (
+    <playerContext.Provider
+      value={{ player, setPlayer, myPlayers, setMyPlayers }}
+    >
+      {children}
+    </playerContext.Provider>
+  );
+};
 
-export default playerContext
+export default playerContext;

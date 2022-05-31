@@ -11,8 +11,23 @@ a:link {
     color: rgb(138, 153, 252);
 }
 
+.freepik:hover {
+    color: rgb(189, 197, 249);
+}
+
+a:hover {
+    color: #a5b7c6;
+}
+
+
 .nav {
     margin-bottom: 140px;
+    margin-bottom: 140px;
+
+}
+
+.futbolIMG {
+    width: 100%;
 }
 
 .contpage {
