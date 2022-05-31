@@ -1,9 +1,12 @@
 import logo from './logo.svg';
+import React from 'react';
+import {Nav} from '../components/Nav.js';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <Nav />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
