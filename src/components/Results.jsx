@@ -33,6 +33,10 @@ const Results = () => {
     useState([]);
 
   useEffect(() => {
+    setFilteredByCountry(sortedData.filter((item) => item.nation === country));
+  }, [country]);
+
+  useEffect(() => {
     setFilteredByCountryAndPosition(
       sortedData.filter(
         (item) => item.nation === country && item.position === position
