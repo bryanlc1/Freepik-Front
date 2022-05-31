@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
-import Button from 'bootstrap/Button'
+import Button from 'react-bootstrap/Button'
 
 const FormComponent = () => {
+	const [country, setCountry] = useState()
+	const [position, setPosition] = useState()
+
 	return (
 		<Form>
 			<Form.Group className="mb-3" controlId="formAge">
