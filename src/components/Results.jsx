@@ -25,72 +25,45 @@ const Results = () => {
 
   const myPlayer = usePlayer();
 
-  console.log("age " + myPlayer.player.age);
-
-  console.log(myPlayer);
-
-  // const [player, setPlayer] = useState({});
-  // const [country, setCountry] = useState();
-  // const [position, setPosition] = useState();
-
-  // useEffect(() => {
-  //   setFilteredPlayers(
-  //     sortedData.filter(
-  //       (item) => item.nation === country && item.position === position
-  //     )
-  //   );
-  // }, [country, position]);
+  const {
+    player: { id, age, country, position, price },
+  } = myPlayer;
 
   useEffect(() => {
     setFilteredPlayers(
       sortedData.filter(
-        (item) =>
-          item.nation === myPlayer.player.country &&
-          item.position === myPlayer.player.position
+        (item) => item.nation === country && item.position === position
       )
     );
   }, [myPlayer]);
 
-  // const filteredData = sortedData.filter((item) => item.nation === "France");
-
-  // const countries = new Set();
-  // const positions = new Set();
-
-  // data.map((item) => {
-  //   countries.add(item.nation);
-  // });
-
-  // data.map((item) => {
-  //   positions.add(item.position);
-  // });
-
-  // const sortedCountries = [...countries].sort();
-  // const sortedPositions = [...positions].sort();
-
   return (
-    <AreaChart
-      data={filteredPlayers}
-      width={1200}
-      height={600}
-      margin={{ top: 10, right: 30, left: 60, bottom: 0 }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="age" />
-      <YAxis
-        tickFormatter={(tick) => {
-          return tick.toLocaleString();
-        }}
-      />
-      <Tooltip />
-      <Area type="monotone" dataKey="price" stroke="#8884d8" fill="#8884d8" />
-      <ReferenceDot
-        x={myPlayer.player.age}
-        y={myPlayer.player.price}
-        r={20}
-        fill="red"
-        stroke="none"
-      />
-    </AreaChart>
+    <div className="card">
+      <ResponsiveContainer width="100%" height={500}>
+        <AreaChart
+          width="100%"
+          data={filteredPlayers}
+          margin={{ top: 10, right: 30, left: 14, bottom: 0 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="age" tick={{ fontSize: 12 }} />
+          <YAxis
+            tick={{ fontSize: 12 }}
+            tickFormatter={(tick) => {
+              return tick.toLocaleString();
+            }}
+          />
+          <Tooltip />
+          <Area
+            type="monotone"
+            dataKey="price"
+            stroke="#8884d8"
+            fill="#8884d8"
+          />
+          <ReferenceDot x={age} y={price} r={20} fill="red" stroke="none" />
+        </AreaChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
