@@ -42,9 +42,13 @@ function Players() {
     <Container className="contpage">
       <figure>
         <img
-          src="https://img.freepik.com/psd-gratis/diseno-plantilla-futbol-realista_23-2149336857.jpg?t=st=1654003651~exp=1654004251~hmac=f7a7f53c17428dee69e702d417c4b7430d3d2bf71769c5bf089d2e9889bf24f8&w=1380"
+          src="https://img.freepik.com/vector-gratis/plantilla-facebook-futbol-dibujada-mano_23-2149323643.jpg?t=st=1654004127~exp=1654004727~hmac=74fcd7097319613a3e8a1fbfc61cd274a8274dfa355056b44e84af6add0c031e&w=1060"
           alt="Imagen Futbol"
+          className="futbolIMG"
         />
+        <a href="https://www.freepik.es/vectores/plantilla-futbol">
+          Vector de plantilla futbol creado por freepik - www.freepik.es
+        </a>
       </figure>
       <div className="players-layout">
         {myPlayers.length
