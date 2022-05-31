@@ -1,13 +1,12 @@
-import React from 'react';
-import Nav from './components/Nav.jsx';
-import './App.css';
+import {PlayerProvider} from './context/PlayerContext'
+import Home from './components/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
-
-    </div>
+    <PlayerProvider>
+      <Home/>
+    </PlayerProvider>
   );
 }
 
