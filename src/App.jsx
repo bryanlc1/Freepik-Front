@@ -3,6 +3,7 @@ import { PlayerProvider } from "./context/PlayerContext";
 import Home from "./pages/Home";
 import ResultsPage from "./pages/ResultsPage";
 import NavComponent from './components/NavComponent'
+import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {

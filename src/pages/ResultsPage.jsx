@@ -1,9 +1,12 @@
 import Results from "./ResultsPage";
+import { Container } from "react-bootstrap";
 import CardPlayer from '../components/CardPlayer';
 const ResultsPage = () => {
   return (
     <>
-    <CardPlayer/>
+    <Container className="contpage">
+      <CardPlayer/>
+    </Container>
     </>
   );
 };
