@@ -5,6 +5,7 @@ import ResultsPage from "./pages/ResultsPage";
 import NavComponent from './components/NavComponent'
 import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css"
 
 function App() {
   return (

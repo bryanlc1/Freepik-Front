@@ -1,11 +1,105 @@
+.freepik {
+  color: rgb(138, 153, 252);
+}
+
 .nav {
-  display: flex;
+  margin-bottom: 140px;
 }
 
-.freepik{
-  color: purple;
+.players-layout {
+    margin: 3rem;
+    display: grid;
+    gap: 2rem;
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
 }
 
-.contpage{
-  margin-top: 100px;
+.player {
+    background-color: #356c;
+    padding: 1rem 2rem;
+    padding-top: 0;
+    position: relative;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 6px 6px 40px rgba(0, 0, 0, .5);
+
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.player .position {
+    width: fit-content;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.player .info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.country-flag {
+    display: block;
+    height: calc(var(--badge-size)/1.7);
+    width: var(--badge-size);
+    border-radius: 4px;
+    background-color: darkgray;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.player .age {
+    display: block;
+    width: var(--badge-size);
+    height: var(--badge-size);
+    line-height: var(--badge-size);
+    text-align: center;
+    font-size: calc(var(--badge-size)/2.5);
+    font-weight: 700;
+    border-radius: 50%;
+    background-color: darkgray;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.player .shield {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.player .price {
+    width: 100%;
+    text-align: center;
+}
+
+.info-body h4 {
+    background-color: rgba(0, 0, 0, .2);
+    padding: 0.2rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.player ul {
+    margin: 1rem 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.player li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
 }
