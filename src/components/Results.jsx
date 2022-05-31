@@ -15,31 +15,31 @@ import {
   CartesianGrid,
 } from "recharts";
 
-const data = require("./data/train.json");
+const data = require("../data/train.json");
 const sortedData = data.sort((a, b) => a.age - b.age);
 
 // dummy props
-const props = {
+const dummyProps = {
   country: "France",
-  position: "Forward∫",
+  position: "Forward",
 };
 
-const Results = (props) => {
-  const { country, position } = props;
+const Results = ({ dummyProps }) => {
+  const { country, position } = dummyProps;
 
   const [filteredData, setFilteredData] = useState([]);
 
-  useEffect(() => {
-    setFilteredData(
-      sortedData.filter(
-        (item) => item.nation === country && item.position === position
-      )
-    );
-  }, [country, position]);
+  const filteredData = sortedData.filter(
+    (item) => item.nation === "France" && item.position === "Forward"
+  );
 
-  data.map((item) => {
-    positions.add(item.position);
-  });
+  // useEffect(() => {
+  //   setFilteredData(
+  //     sortedData.filter(
+  //       (item) => item.nation === "France" && item.position === "Forward"
+  //     )
+  //   );
+  // }, []);
 
   return (
     <AreaChart
