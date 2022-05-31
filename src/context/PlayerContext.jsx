@@ -9,7 +9,7 @@ export const PlayerProvider = ({ children }) => {
     age: 23,
     country: "Argentina",
     position: "Goalkeeper",
-    price: 1000000,
+    price: 4000000,
   });
 
   return (
