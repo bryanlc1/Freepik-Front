@@ -12,7 +12,7 @@ function NavComponent() {
 				<Container>
 					<Navbar.Brand>
 						<Link to="/">
-							<i class="fi fi-rr-football freepik"></i> Front-end
+							<i className="fi fi-rr-football freepik"></i> Front-end
 						</Link>
 					</Navbar.Brand>
 					<Nav.Link>

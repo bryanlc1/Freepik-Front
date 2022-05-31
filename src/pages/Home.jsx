@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap'
 import FormComponent from '../components/FormComponent'
 import Fut from "../assets/futbol.png"
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 	return (
@@ -9,12 +10,12 @@ const Home = () => {
       <div>
         <img src={Fut} alt="futbolista" className="futbol" />
         <div>
-          <a
-            href="https://www.flaticon.es/stickers-gratis/futbol-americano"
-            title="fútbol americano stickers"
+          <Link
+            to={{pathname:'"https://www.flaticon.es/stickers-gratis/futbol-americano"'}}
+			target='_blank'
           >
             Fútbol stickers creadas por Stickers - Flaticon
-          </a>
+          </Link>
         </div>
       </div>
     </Container>

@@ -14,10 +14,10 @@ const FormComponent = () => {
 	// Data form
 	const [formData, setFormData] = useState({
 		id: 0,
-		formAge: null,
+		formAge: undefined,
 		formPosition: '',
 		formCountry: '',
-		formPrice: null,
+		formPrice: undefined,
 	})
 	const { formAge, formPosition, formCountry, formPrice } = formData
 
