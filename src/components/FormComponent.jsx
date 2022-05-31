@@ -114,20 +114,18 @@ const FormComponent = () => {
 				</Form.Select>
 			</Form.Group>
 			{formAge !== 0 && formPosition !== '' && formCountry !== '' && (
-				<Form.Group className="mb-3">
+				<Form.Group className="mb-3" controlId="formPrice">
 					<Form.Label>Price</Form.Label>
-					<InputGroup controlId="formPrice">
-						<InputGroup.Text>{minPrice.toLocaleString()} €</InputGroup.Text>
-						<Form.Control
-							type="number"
-							min={minPrice}
-							max={maxPrice}
-							value={formPrice < minPrice ? minPrice : formPrice}
-							onChange={onChange}
-							required
-						/>
-						<InputGroup.Text>{maxPrice.toLocaleString()} €</InputGroup.Text>
-					</InputGroup>
+					{minPrice.toLocaleString()} €
+					<Form.Control
+						type="number"
+						min={minPrice}
+						max={maxPrice}
+						value={formPrice < minPrice ? minPrice : formPrice}
+						onChange={onChange}
+						required
+					/>
+					{maxPrice.toLocaleString()} €
 				</Form.Group>
 			)}
 			<Button variant="primary" type="submit">
