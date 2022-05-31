@@ -40,16 +40,6 @@ function Players() {
 
 	return (
     <Container className="contpage">
-      <figure>
-        <img
-          src="https://img.freepik.com/vector-gratis/plantilla-facebook-futbol-dibujada-mano_23-2149323643.jpg?t=st=1654004127~exp=1654004727~hmac=74fcd7097319613a3e8a1fbfc61cd274a8274dfa355056b44e84af6add0c031e&w=1060"
-          alt="Imagen Futbol"
-          className="futbolIMG"
-        />
-        <a href="https://www.freepik.es/vectores/plantilla-futbol">
-          Vector de plantilla futbol creado por freepik - www.freepik.es
-        </a>
-      </figure>
       <div className="players-layout">
         {myPlayers.length
           ? myPlayers.map((player) => (
@@ -182,6 +172,16 @@ function Players() {
             ))
           : "You not have any player"}
       </div>
+      <figure>
+        <img
+          src="https://img.freepik.com/vector-gratis/plantilla-facebook-futbol-dibujada-mano_23-2149323643.jpg?t=st=1654004127~exp=1654004727~hmac=74fcd7097319613a3e8a1fbfc61cd274a8274dfa355056b44e84af6add0c031e&w=1060"
+          alt="Imagen Futbol"
+          className="futbolIMG"
+        />
+        <a href="https://www.freepik.es/vectores/plantilla-futbol">
+          Vector de plantilla futbol creado por freepik - www.freepik.es
+        </a>
+      </figure>
     </Container>
   );
 }
