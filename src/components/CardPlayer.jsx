@@ -1,9 +1,27 @@
+import React from "react";
 import { Card } from "react-bootstrap"
-export default () =>{
+import usePlayer from '../hooks/usePlayer';
+
+import './CardPlayer.css';
+const CardPlayer = () => {
+
+    const {player}=usePlayer();
+    console.log(player)
     return(
         <>
-        <h1>Card component</h1>
-        <Card></Card>
+        <Card className="mb-2">
+        <span className="iconPlayer">
+                    <p>{player.id}</p>
+                </span>
+        <Card.Body className="bodyCard">
+                
+                <span>Edge: {player.age}</span>
+                <span>Country: {player.country}</span>
+                <span>Position: {player.position}</span>
+        </Card.Body>
+        </Card>
         </>
     )
 }
+
+export default CardPlayer;

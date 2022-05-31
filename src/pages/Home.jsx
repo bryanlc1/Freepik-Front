@@ -3,7 +3,7 @@ import FormComponent from '../components/FormComponent'
 
 const Home = () => {
 	return (
-		<Container>
+		<Container className='contpage'>
 			<FormComponent />
 		</Container>
 	)
