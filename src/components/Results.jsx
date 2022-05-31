@@ -16,6 +16,8 @@ import {
   ReferenceDot,
 } from "recharts";
 
+import usePlayer from "../hooks/usePlayer";
+
 const data = require("../data/train.json");
 const sortedData = data.sort((a, b) => a.age - b.age);
 
@@ -27,6 +29,10 @@ const dummyProps = {
 };
 
 const Results = () => {
+  const { myPlayer } = usePlayer();
+
+  console.log(myPlayer);
+
   const [player, setPlayer] = useState({});
   const [country, setCountry] = useState();
   const [position, setPosition] = useState();
@@ -59,23 +65,32 @@ const Results = () => {
   return (
     <div className="App">
       <h2>{country}</h2>
-
-      <AreaChart
-        data={filteredPlayers}
-        width={1200}
-        height={600}
-        margin={{ top: 10, right: 30, left: 60, bottom: 0 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="age" />
-        <YAxis
-          tickFormatter={(tick) => {
-            return tick.toLocaleString();
-          }}
-        />
-        <Tooltip />
-        <Area type="monotone" dataKey="price" stroke="#8884d8" fill="#8884d8" />
-      </AreaChart>
+      <div style={{ width: "100%", height: 600 }}>
+        <ResponsiveContainer width="100%" height={600}>
+          <AreaChart
+            data={filteredPlayers}
+            width={1200}
+            height={600}
+            margin={{ top: 10, right: 30, left: 60, bottom: 0 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="age" />
+            <YAxis
+              tickFormatter={(tick) => {
+                return tick.toLocaleString();
+              }}
+            />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="price"
+              stroke="#8884d8"
+              fill="#8884d8"
+            />
+            <ReferenceDot x={28} y={50000000} r={50} fill="red" stroke="none" />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
 
       <div className="selector">
         <label for="country-select">Choose a country:</label>
