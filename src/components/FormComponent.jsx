@@ -19,7 +19,7 @@ const FormComponent = () => {
 		formCountry: '',
 		formPrice: 0,
 	})
-	const { id, formAge, formPosition, formCountry, formPrice } = formData
+	const { formAge, formPosition, formCountry, formPrice } = formData
 
 	// Data
 	const countries = new Set()
@@ -68,7 +68,7 @@ const FormComponent = () => {
 		const idPlayer = 9999
 		setPlayer({
 			id: idPlayer,
-			postion: formPosition,
+			position: formPosition,
 			age: formAge,
 			country: formCountry,
 			price: formPrice,
@@ -114,9 +114,9 @@ const FormComponent = () => {
 				</Form.Select>
 			</Form.Group>
 			{formAge !== 0 && formPosition !== '' && formCountry !== '' && (
-				<Form.Group className="mb-3" controlId="formPrice">
+				<Form.Group className="mb-3">
 					<Form.Label>Price</Form.Label>
-					<InputGroup>
+					<InputGroup controlId="formPrice">
 						<InputGroup.Text>{minPrice.toLocaleString()} €</InputGroup.Text>
 						<Form.Control
 							type="number"
