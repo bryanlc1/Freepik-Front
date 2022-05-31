@@ -3,9 +3,9 @@ import React from "react";
 
 function Nav() {
   return (
-    <div>
+    <div className="nav">
       <p>
-        Formulario<i class="fi fi-rr-football"></i>
+        Formulario<i class="fi fi-rr-football freepik"></i>
       </p>
       <p>Resultado formulario</p>
       <p>Mis jugadores</p>
