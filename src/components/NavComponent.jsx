@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import fee from "../assets/freepik.png";
 
@@ -15,11 +16,10 @@ function NavComponent() {
         className="margin-b"
       >
         <Container>
-          <Navbar.Brand href="http://localhost:git p3000/">
-            <i class="fi fi-rr-football freepik"></i> Front-end
+          <Navbar.Brand>
+            <Link to='/'><i class="fi fi-rr-football freepik"></i> Front-end</Link>
           </Navbar.Brand>
-          <Nav.Link href="">Formulario</Nav.Link>
-          <Nav.Link href="../pages/ResultsPage">Results</Nav.Link>
+          <Nav.Link href="../pages/Players">Mis jugadores</Nav.Link>
           <img src={fee} alt="hh" />
         </Container>
       </Navbar>
