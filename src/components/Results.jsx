@@ -13,6 +13,7 @@ import {
   Legend,
   Tooltip,
   CartesianGrid,
+  ReferenceDot,
 } from "recharts";
 
 const data = require("../data/train.json");
@@ -57,6 +58,7 @@ const Results = ({ dummyProps }) => {
       />
       <Tooltip />
       <Area type="monotone" dataKey="price" stroke="#8884d8" fill="#8884d8" />
+      {/* { mean && <ReferenceDot {...mean} r={20} fill="red" stroke="none" /> } */}
     </AreaChart>
   );
 };
