@@ -5,16 +5,16 @@ import { Container } from "react-bootstrap";
 import fee from "../assets/freepik.png";
 
 
+
 function NavComponent() {
   return (
     <div className="nav">
-      <Navbar bg="dark" variant="dark" fixed="top" expand="sm" className="margin-b">
+      <Navbar bg="dark" variant="dark" fixed="top" expand="sm">
         <Container>
-          <Navbar.Brand href="../pages/Home">
+          <Navbar.Brand href="http://localhost:3000/">
             <i class="fi fi-rr-football freepik"></i> Front-end
           </Navbar.Brand>
-          <Nav.Link href="#home">Formulario</Nav.Link>
-          <Nav.Link href="../pages/ResultsPage">Resultado Form</Nav.Link>
+          <Nav.Link href="../pages/ResultPage">Resultado</Nav.Link>
           <Nav.Link href="../pages/Players">Mis jugadores</Nav.Link>
           <Nav.Link href="#pricing">About</Nav.Link>
           <img src={fee} alt="hh" />
