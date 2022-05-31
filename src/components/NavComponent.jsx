@@ -9,13 +9,12 @@ function NavComponent() {
       <Navbar bg="dark" variant="dark" fixed="top" expand="sm">
         <Container>
           <Navbar.Brand href="#home">
-            <i class="fi fi-rr-football freepik"></i> Freepik
+            <i class="fi fi-rr-football freepik"></i> Freepik Front
           </Navbar.Brand>
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="#home">Formulario</Nav.Link>
+          <Nav.Link href="../pages/ResultsPage">Resultado Form</Nav.Link>
+          <Nav.Link href="#pricing">Mis jugadores</Nav.Link>
+          <Nav.Link href="#pricing">About</Nav.Link>
         </Container>
       </Navbar>
     </div>
