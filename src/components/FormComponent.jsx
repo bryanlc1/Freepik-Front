@@ -121,7 +121,7 @@ const FormComponent = () => {
 						type="number"
 						min={minPrice}
 						max={maxPrice}
-						value={formPrice < minPrice ? minPrice : formPrice}
+						value={formPrice}
 						onChange={onChange}
 						required
 					/>
