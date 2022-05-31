@@ -15,7 +15,7 @@ function NavComponent() {
         className="margin-b"
       >
         <Container>
-          <Navbar.Brand href="http://localhost:3000/">
+          <Navbar.Brand href="http://localhost:git p3000/">
             <i class="fi fi-rr-football freepik"></i> Front-end
           </Navbar.Brand>
           <Nav.Link href="">Formulario</Nav.Link>
