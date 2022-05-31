@@ -1,10 +1,11 @@
+import { Container } from 'react-bootstrap'
 import FormComponent from '../components/FormComponent'
 
 const Home = () => {
 	return (
-		<div>
+		<Container>
 			<FormComponent />
-		</div>
+		</Container>
 	)
 }
 export default Home
