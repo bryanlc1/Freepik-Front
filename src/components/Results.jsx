@@ -19,25 +19,21 @@ import {
 const data = require("../data/train.json");
 const sortedData = data.sort((a, b) => a.age - b.age);
 
-// dummy props
-// const dummyProps = {
-//   country: "France",
-//   position: "Forward",
-// };
+const dummyProps = {
+  id: "abc",
+  country: "France",
+  position: "Forward",
+  price: "1000000",
+};
 
 const Results = () => {
+  const [player, setPlayer] = useState({});
   const [country, setCountry] = useState();
   const [position, setPosition] = useState();
-  const [filteredByCountry, setFilteredByCountry] = useState([]);
-  const [filteredByCountryAndPosition, setFilteredByCountryAndPosition] =
-    useState([]);
+  const [filteredPlayers, setFilteredPlayers] = useState([]);
 
   useEffect(() => {
-    setFilteredByCountry(sortedData.filter((item) => item.nation === country));
-  }, [country]);
-
-  useEffect(() => {
-    setFilteredByCountryAndPosition(
+    setFilteredPlayers(
       sortedData.filter(
         (item) => item.nation === country && item.position === position
       )
@@ -60,25 +56,16 @@ const Results = () => {
   const sortedCountries = [...countries].sort();
   const sortedPositions = [...positions].sort();
 
-  console.log(positions);
-
   return (
     <div className="App">
       <h2>{country}</h2>
 
       <AreaChart
-        // data={sortedData}
-        data={filteredByCountryAndPosition}
+        data={filteredPlayers}
         width={1200}
         height={600}
         margin={{ top: 10, right: 30, left: 60, bottom: 0 }}
       >
-        {/* <defs>
-          <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-            <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-          </linearGradient>
-        </defs> */}
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="age" />
         <YAxis
