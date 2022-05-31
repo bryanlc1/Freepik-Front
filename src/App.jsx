@@ -10,8 +10,8 @@ import "./App.css"
 function App() {
   return (
     <PlayerProvider>
-      <NavComponent />
       <Router>
+      <NavComponent />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="results" element={<ResultsPage />} />
