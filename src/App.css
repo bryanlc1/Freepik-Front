@@ -14,6 +14,11 @@ a:link{
   margin-top: 100px;
 }
 
+.futbol{
+  width: 350px;
+  margin-left: 100px;
+}
+
 .players-layout {
     margin: 3rem;
     display: grid;
