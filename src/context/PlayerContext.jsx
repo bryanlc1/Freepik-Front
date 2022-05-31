@@ -11,10 +11,11 @@ export const PlayerProvider = ({ children }) => {
     position: "Goalkeeper",
     price: 4000000,
   });
-  
 
   return (
-    <playerContext.Provider value={{ player, setPlayer }}>
+    <playerContext.Provider
+      value={{ player, setPlayer, myPlayers, setMyPlayers }}
+    >
       {children}
     </playerContext.Provider>
   );

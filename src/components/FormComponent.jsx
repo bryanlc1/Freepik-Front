@@ -1,4 +1,4 @@
-import { useEffect, useState, useId } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form'
@@ -10,7 +10,6 @@ const data = require('../data/train.json')
 
 const FormComponent = () => {
 	// inicialization
-	const idPlayer = useId()
 	const navigate = useNavigate()
 	// Data form
 	const [formData, setFormData] = useState({
@@ -41,7 +40,7 @@ const FormComponent = () => {
 	const sortedPositions = [...positions].sort()
 
 	// Context
-	const { setPlayer } = usePlayer()
+	const { setPlayer, myPlayers, setMyPlayers } = usePlayer()
 
 	useEffect(() => {
 		if (formAge && formPosition !== '' && formCountry !== '') {
@@ -65,80 +64,87 @@ const FormComponent = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault()
-		setPlayer({
-			id: idPlayer,
+		const newId = data.map((current) => current.id)
+		const newPlayer = {
+			id: newId.length + 1,
 			position: formPosition,
 			age: formAge,
 			country: formCountry,
 			price: formPrice,
-		})
+		}
+		setPlayer(newPlayer)
+		setMyPlayers([...myPlayers, newPlayer])
 		navigate('results')
 	}
 
 	return (
-		<Form onSubmit={onSubmit}>
-			<Form.Group className="mb-3" controlId="formAge">
-				<Form.Label>Age</Form.Label>
-				<Form.Control
-					type="number"
-					min="15"
-					max="45"
-					value={formAge}
-					placeholder="15"
-					onChange={onChange}
+    <Form onSubmit={onSubmit}>
+			<Form.Group className="mb-3"
+				controlId="formAge"  >
+        <Form.Label>Age</Form.Label>
+        <Form.Control
+          type="number"
+          min="15"
+          max="45"
+          value={formAge}
+          placeholder="15"
+          onChange={onChange}
 					required
-				/>
-				<Form.Text className="text-muted">Min. 15 years, max 45 years</Form.Text>
-			</Form.Group>
+					
+        />
+        <Form.Text className="text-muted" >
+          Min. 15 years, max 45 years
+        </Form.Text>
+      </Form.Group>
 
-			<Form.Group className="mb-3" controlId="formPosition">
-				<Form.Label>Position</Form.Label>
-				<Form.Select onChange={onChange} required>
-					<option>Choose position</option>
-					{sortedPositions.map((position) => (
-						<option value={position} key={position}>
-							{position}
-						</option>
-					))}
-				</Form.Select>
-			</Form.Group>
-			<Form.Group className="mb-3" controlId="formCountry">
-				<Form.Label>Country</Form.Label>
-				<Form.Select onChange={onChange} required>
-					<option>Choose country</option>
-					{sortedCountries.map((country) => (
-						<option value={country} key={country}>
-							{country}
-						</option>
-					))}
-				</Form.Select>
-			</Form.Group>
-			{formAge && formPosition !== '' && formCountry !== '' && (
-				<Form.Group className="mb-3" controlId="formPrice">
-					<Form.Label>Price</Form.Label>
-					<div className="d-flex w-100">
-						<div className="text-light bg-secondary p-2">
-							Min. {minPrice.toLocaleString()} €
-						</div>
-						<Form.Control
-							type="number"
-							min={minPrice}
-							max={maxPrice}
-							value={formPrice}
-							placeholder="0"
-							onChange={onChange}
-							required
-						/>
-						<div className="text-light bg-secondary p-2">
-							Max. {maxPrice.toLocaleString()} €
-						</div>
-					</div>
-				</Form.Group>
-			)}
-			<Button variant="primary" type="submit">
-				Submit
-			</Button>
-		</Form>
-	)
+      <Form.Group className="mb-3" controlId="formPosition">
+        <Form.Label>Position</Form.Label>
+        <Form.Select onChange={onChange} required>
+          <option>Choose position</option>
+          {sortedPositions.map((position) => (
+            <option value={position} key={position}>
+              {position}
+            </option>
+          ))}
+        </Form.Select>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formCountry">
+        <Form.Label>Country</Form.Label>
+        <Form.Select onChange={onChange} required>
+          <option>Choose country</option>
+          {sortedCountries.map((country) => (
+            <option value={country} key={country}>
+              {country}
+            </option>
+          ))}
+        </Form.Select>
+      </Form.Group>
+      {formAge && formPosition !== "" && formCountry !== "" && (
+        <Form.Group className="mb-3" controlId="formPrice">
+          <Form.Label>Price</Form.Label>
+          <div className="d-flex w-100">
+            <div className="text-light bg-secondary p-2">
+              Min. {minPrice.toLocaleString()} €
+            </div>
+            <Form.Control
+              type="number"
+              min={minPrice}
+              max={maxPrice}
+              value={formPrice}
+              placeholder="0"
+              onChange={onChange}
+              required
+            />
+            <div className="text-light bg-secondary p-2">
+              Max. {maxPrice.toLocaleString()} €
+            </div>
+          </div>
+        </Form.Group>
+      )}
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+  );
 }
 export default FormComponent
