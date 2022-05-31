@@ -6,6 +6,10 @@
   margin-bottom: 140px;
 }
 
+.contpage{
+  margin-top: 100px;
+}
+
 .players-layout {
     margin: 3rem;
     display: grid;

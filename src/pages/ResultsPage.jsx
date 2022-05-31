@@ -6,10 +6,7 @@ const ResultsPage = () => {
     <>
       <Container className="contpage">
         <CardPlayer />
-<<<<<<< HEAD
-=======
         <Results />
->>>>>>> results
       </Container>
     </>
   );
