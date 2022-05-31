@@ -9,12 +9,15 @@ const CardPlayer = () => {
     console.log(player)
     return(
         <>
-        <Card className="cardPlayer">
+        <Card className="mb-2">
+        <span className="iconPlayer">
+                    <p>{player.id}</p>
+                </span>
         <Card.Body className="bodyCard">
-                <span className="iconPlayer">{player.id}</span>
-                <span className="itemCard">{player.edge}</span>
-                <span>{player.country}</span>
-                <span>{player.position}</span>
+                
+                <span>Edge: {player.age}</span>
+                <span>Country: {player.country}</span>
+                <span>Position: {player.position}</span>
         </Card.Body>
         </Card>
         </>

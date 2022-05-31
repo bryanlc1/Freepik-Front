@@ -10,6 +10,7 @@ export const PlayerProvider = ({children}) => {
         age:23,
         country:'Ecuador',
         position:'Fordward',
+        price:34567,
     });
 
     return (
