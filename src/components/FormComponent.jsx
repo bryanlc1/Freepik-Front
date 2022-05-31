@@ -64,7 +64,8 @@ const FormComponent = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault()
-		const newId = data.map((current) => current.id)
+		const newId = data.map((current) => current.id);
+		
 		const newPlayer = {
 			id: newId.length + 1,
 			position: formPosition,
