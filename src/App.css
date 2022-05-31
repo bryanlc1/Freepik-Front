@@ -7,8 +7,13 @@ a:link{
 }
 
 .freepik:hover{
+    color:rgb(189, 197, 249);
+}
+
+a:hover{
     color: #a5b7c6;
 }
+
 
 .nav {
   margin-bottom: 140px;
