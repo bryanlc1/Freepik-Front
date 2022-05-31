@@ -6,8 +6,13 @@ a:link{
   color: rgb(138, 153, 252);
 }
 
+.freepik:hover{
+    color: #a5b7c6;
+}
+
 .nav {
   margin-bottom: 140px;
+  
 }
 
 .contpage{
@@ -115,4 +120,8 @@ a:link{
     align-items: center;
     justify-content: center;
     row-gap: 0.5rem;
+}
+
+.colorform{
+    color:red!;
 }
