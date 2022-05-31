@@ -14,10 +14,10 @@ const CardPlayer = () => {
                     <p>{player.id}</p>
                 </span>
         <Card.Body className="bodyCard">
-                
                 <span>Edge: {player.age}</span>
                 <span>Country: {player.country}</span>
                 <span>Position: {player.position}</span>
+                <span>Price: {player.price}</span>
         </Card.Body>
         </Card>
         </>
