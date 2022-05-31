@@ -1,4 +1,4 @@
-import { useEffect, useState, useId } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form'
@@ -10,7 +10,6 @@ const data = require('../data/train.json')
 
 const FormComponent = () => {
 	// inicialization
-	const idPlayer = useId()
 	const navigate = useNavigate()
 	// Data form
 	const [formData, setFormData] = useState({
@@ -41,7 +40,7 @@ const FormComponent = () => {
 	const sortedPositions = [...positions].sort()
 
 	// Context
-	const { setPlayer } = usePlayer()
+	const { setPlayer, myPlayers, setMyPlayers } = usePlayer()
 
 	useEffect(() => {
 		if (formAge && formPosition !== '' && formCountry !== '') {
@@ -65,13 +64,16 @@ const FormComponent = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault()
-		setPlayer({
-			id: idPlayer,
+		const newId = data.map((current) => current.id)
+		const newPlayer = {
+			id: newId.length + 1,
 			position: formPosition,
 			age: formAge,
 			country: formCountry,
 			price: formPrice,
-		})
+		}
+		setPlayer(newPlayer)
+		setMyPlayers([...myPlayers, newPlayer])
 		navigate('results')
 	}
 
