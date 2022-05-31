@@ -1,4 +1,4 @@
-import { useEffect, useState, useId } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form'
@@ -10,7 +10,6 @@ const data = require('../data/train.json')
 
 const FormComponent = () => {
 	// inicialization
-	const idPlayer = useId()
 	const navigate = useNavigate()
 	// Data form
 	const [formData, setFormData] = useState({
