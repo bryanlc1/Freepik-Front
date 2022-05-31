@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
 
 import usePlayer from '../hooks/usePlayer'
 
@@ -14,10 +13,10 @@ const FormComponent = () => {
 	// Data form
 	const [formData, setFormData] = useState({
 		id: 0,
-		formAge: 0,
+		formAge: null,
 		formPosition: '',
 		formCountry: '',
-		formPrice: 0,
+		formPrice: null,
 	})
 	const { formAge, formPosition, formCountry, formPrice } = formData
 
@@ -44,7 +43,7 @@ const FormComponent = () => {
 
 	useEffect(() => {
 		console.log(formData)
-		if (formAge !== 0 && formPosition !== '' && formCountry !== '') {
+		if (formAge && formPosition !== '' && formCountry !== '') {
 			const sortedData = data
 				.filter((player) => player.nation === formCountry)
 				.filter((player) => player.age >= formAge - 5 && player.age <= formAge + 5)
@@ -85,16 +84,17 @@ const FormComponent = () => {
 					min="15"
 					max="45"
 					value={formAge}
+					placeholder="15"
 					onChange={onChange}
 					required
 				/>
-				<Form.Text className="text-muted">Introduce age player</Form.Text>
+				<Form.Text className="text-muted">Min. 15 years, max 45 years</Form.Text>
 			</Form.Group>
 
 			<Form.Group className="mb-3" controlId="formPosition">
 				<Form.Label>Position</Form.Label>
 				<Form.Select onChange={onChange} required>
-					<option>- Choose one -</option>
+					<option>Choose position</option>
 					{sortedPositions.map((position) => (
 						<option value={position} key={position}>
 							{position}
@@ -105,7 +105,7 @@ const FormComponent = () => {
 			<Form.Group className="mb-3" controlId="formCountry">
 				<Form.Label>Country</Form.Label>
 				<Form.Select onChange={onChange} required>
-					<option value={null}>- Choose one -</option>
+					<option>Choose country</option>
 					{sortedCountries.map((country) => (
 						<option value={country} key={country}>
 							{country}
@@ -113,19 +113,26 @@ const FormComponent = () => {
 					))}
 				</Form.Select>
 			</Form.Group>
-			{formAge !== 0 && formPosition !== '' && formCountry !== '' && (
+			{formAge && formPosition !== '' && formCountry !== '' && (
 				<Form.Group className="mb-3" controlId="formPrice">
 					<Form.Label>Price</Form.Label>
-					{minPrice.toLocaleString()} €
-					<Form.Control
-						type="number"
-						min={minPrice}
-						max={maxPrice}
-						value={formPrice}
-						onChange={onChange}
-						required
-					/>
-					{maxPrice.toLocaleString()} €
+					<div className="d-flex w-100">
+						<div className="text-light bg-secondary p-2">
+							Min. {minPrice.toLocaleString()} €
+						</div>
+						<Form.Control
+							type="number"
+							min={minPrice}
+							max={maxPrice}
+							value={formPrice}
+							placeholder="0"
+							onChange={onChange}
+							required
+						/>
+						<div className="text-light bg-secondary p-2">
+							Max. {maxPrice.toLocaleString()} €
+						</div>
+					</div>
 				</Form.Group>
 			)}
 			<Button variant="primary" type="submit">
